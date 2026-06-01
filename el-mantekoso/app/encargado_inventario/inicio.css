@@ -1,0 +1,5 @@
+.perfil-container { background: #fcf8f2; min-height: 100vh; padding-bottom: 50px; }
+.card-usuario { background: white; margin: 20px; border-radius: 25px; padding: 30px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.avatar-circle { font-size: 50px; background: #eee; width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; }
+.btn-admin-access { width: 100%; background: #1a2a44; color: white; padding: 15px; border-radius: 15px; border: none; font-weight: bold; cursor: pointer; }
+.area-tecnica-box { background: #fff7ed; padding: 20px; margin: 20px; border-radius: 20px; border: 1px solid #ffedd5; }

@@ -26,7 +26,7 @@ export default function RegistroPage() {
       // CASO 1: GERENTE DE INVENTARIO
       if (form.email === "gerente_inventario@gmail.com" && form.password === "12345678") {
         toast.show("Acceso de Gerente autorizado 🛠️");
-        setTimeout(() => router.push("/dashboard-inventario"), 800);
+        setTimeout(() => router.push("/encargado_inventario"), 800);
       } 
       // CASO 2: CONSUMIDOR
       else if (form.email === "consumidor@gmail.com" && form.password === "12345678") {

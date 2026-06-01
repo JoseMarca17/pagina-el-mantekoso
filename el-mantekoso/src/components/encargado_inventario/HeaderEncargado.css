@@ -1,0 +1,41 @@
+.header-container {
+  background-color: #1a2a44; /* Color Navy de tu diseño */
+  color: white;
+  padding: 50px 24px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.btn-logout {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}

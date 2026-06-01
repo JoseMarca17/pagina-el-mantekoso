@@ -1,0 +1,30 @@
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 16px;
+}
+
+.metric-card {
+  background: white;
+  padding: 16px;
+  border-radius: 20px;
+  border: 1px solid #eef2f6;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.metric-label {
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.metric-value {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.status-alert { color: #f43f5e; }
+.status-ok { color: #10b981; }
