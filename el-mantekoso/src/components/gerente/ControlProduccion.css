@@ -1,0 +1,109 @@
+.prod-header-badge {
+  background-color: #FFE8CC;
+  color: #8A5E38;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
+.prod-card-top {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 20px;
+  border: 1px solid #FFF5E0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+  margin-bottom: 16px;
+}
+
+.prod-row-inline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prod-title-main {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1E3A5F;
+  margin: 0;
+}
+
+.prod-btn-blue {
+  background-color: #1E3A5F;
+  color: #white;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.prod-filter-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.prod-chip {
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+}
+
+.prod-chip.active {
+  background-color: #1E3A5F;
+  color: #ffffff;
+}
+
+.prod-chip.inactive {
+  background-color: #FFE8CC;
+  color: #8A5E38;
+}
+
+.prod-card-merma {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 20px;
+  border: 1px solid #FFF5E0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.prod-merma-btn-red {
+  background-color: #FFF0F0;
+  color: #E53E3E;
+  border: 1px solid #FED7D7;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.prod-box-percentage {
+  background-color: #FFFDF7;
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.report-container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  overflow-y: auto; /* Permite scroll interno si el contenido supera la pantalla */
+}

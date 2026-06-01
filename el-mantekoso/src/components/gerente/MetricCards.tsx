@@ -1,11 +1,11 @@
 import React from 'react';
-import { FiTrendingUp, FiLivephoto, FiAlertTriangle } from 'react-icons/fi';
+import { FiTrendingUp, FiUsers, FiAlertTriangle } from 'react-icons/fi';
 import './MetricCards.css';
 
 export default function MetricCards() {
   const metrics = [
     { id: 1, label: 'Ventas Hoy', value: '$0.00', icon: <FiTrendingUp /> },
-    { id: 2, label: 'Personal', value: '0', icon: <FiLivephoto /> },
+    { id: 2, label: 'Personal', value: '0', icon: <FiUsers /> }, // ¡Corregido aquí!
     { id: 3, label: 'Incidentes', value: '0', icon: <FiAlertTriangle /> },
   ];
 
