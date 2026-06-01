@@ -104,3 +104,29 @@ h3 { font-size: 11px; font-weight: 900; letter-spacing: 0.5px; margin-bottom: 12
   color: var(--navy);
 }
 .nav-btn.active { background: #FEF3C7; border-color: #FDE68A; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.font-display { font-family: 'Playfair Display', serif; } /* O una similar Serif */
+
+.dashboard-container {
+  max-width: 375px;
+  margin: 0 auto;
+  box-shadow: 0 0 50px rgba(0,0,0,0.1);
+}
+
+.section-block { margin: 25px 24px; }
+
+.card-list .list-item:last-child { border-bottom: none; }
+
+input::placeholder { color: #CBD5E1; font-weight: 500; }
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
