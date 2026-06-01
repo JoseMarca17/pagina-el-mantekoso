@@ -21,8 +21,27 @@ export default function RegistroPage() {
       toast.show("Completa los campos");
       return;
     }
-    toast.show(mode === "login" ? "Bienvenido de vuelta 👋" : "Cuenta creada ✓");
-    setTimeout(() => router.push("/inicio"), 800);
+
+    if (mode === "login") {
+      // CASO 1: GERENTE DE INVENTARIO
+      if (form.email === "gerente_inventario@gmail.com" && form.password === "12345678") {
+        toast.show("Acceso de Gerente autorizado 🛠️");
+        setTimeout(() => router.push("/dashboard-inventario"), 800);
+      } 
+      // CASO 2: CONSUMIDOR
+      else if (form.email === "consumidor@gmail.com" && form.password === "12345678") {
+        toast.show("Bienvenido de vuelta 👋");
+        setTimeout(() => router.push("/inicio"), 800);
+      }
+      // CASO 3: CUALQUIER OTRO DATO (ERROR)
+      else {
+        toast.show("Credenciales no reconocidas en el prototipo");
+      }
+    } else {
+      // REGISTRO (POR DEFECTO A INICIO)
+      toast.show("Cuenta creada ✓");
+      setTimeout(() => router.push("/inicio"), 800);
+    }
   }
 
   return (
