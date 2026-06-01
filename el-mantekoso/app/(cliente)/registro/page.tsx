@@ -33,7 +33,12 @@ export default function RegistroPage() {
         toast.show("Bienvenido de vuelta 👋");
         setTimeout(() => router.push("/inicio"), 800);
       }
-      // CASO 3: CUALQUIER OTRO DATO (ERROR)
+      // CASO 3: CAJERO
+      else if (form.email === "cajero@gmail.com" && form.password === "12345678") {
+        toast.show("Bienvenido hora de trabajar 👋");
+        setTimeout(() => router.push("/cajero"), 800);
+      }
+      // CASO 4: CUALQUIER OTRO DATO (ERROR)
       else {
         toast.show("Credenciales no reconocidas en el prototipo");
       }
