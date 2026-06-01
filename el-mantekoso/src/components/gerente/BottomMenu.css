@@ -1,57 +1,107 @@
-.bottom-nav {
+/* Contenedor flotante estilo cápsula (Redondeado y centrado) */
+.bottom-nav-container {
   position: fixed;
   bottom: 16px;
   left: 16px;
   right: 16px;
   background-color: #ffffff;
-  border-radius: 9999px;
+  border-radius: 32px; /* Estilo cápsula elegante */
   border: 1px solid #FFF5E0;
-  padding: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-  z-index: 50;
-  max-width: calc(448px - 32px);
+  padding: 10px 4px 6px 4px; /* Espacio extra abajo para la barra de arrastre */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  z-index: 999;
+  max-width: calc(448px - 32px); /* Ajuste perfecto al simulador de celular */
   margin: 0 auto;
 }
 
-.nav-btn {
+/* Sub-contenedor que habilita el scroll de los botones */
+.bottom-nav-scrollable {
   display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  gap: 4px;
+  padding-bottom: 6px; /* Separación de los botones con la barra de arrastre */
+  -webkit-overflow-scrolling: touch; /* Fluidez táctil en móviles */
+}
+
+/* --- BARRA DE ARRASTRE PARA MOUSE (Scrollbar Estilizada) --- */
+
+/* Grosor de la barrita horizontal */
+.bottom-nav-scrollable::-webkit-scrollbar {
+  height: 5px;
+}
+
+/* El camino/pista por donde se mueve la barra */
+.bottom-nav-scrollable::-webkit-scrollbar-track {
+  background: #FFFBEF; /* Tono crema de fondo de tu app */
+  border-radius: 9999px;
+  margin: 0 20px; /* Evita que choque con las esquinas curvas del menú */
+}
+
+/* El punto/pastilla azul que puedes clickear y arrastrar con el mouse */
+.bottom-nav-scrollable::-webkit-scrollbar-thumb {
+  background: #1E3A5F; /* Tu azul oscuro corporativo */
+  border-radius: 9999px;
+  cursor: grab;
+}
+
+/* Reacción visual al pasar el mouse o arrastrarlo */
+.bottom-nav-scrollable::-webkit-scrollbar-thumb:hover {
+  background: #1A365D;
+  cursor: grabbing;
+}
+
+/* Estructura de cada botón/enlace dentro del menú */
+.nav-scroll-btn {
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex: 1;
+  min-width: 78px; /* Ancho fijo para que no se compriman las opciones */
   padding: 4px 0;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
   background: none;
   border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
 }
 
-.nav-btn.active {
-  color: #1E3A5F;
-  font-weight: 700;
+/* Iconos de los botones */
+.nav-icon-wrapper {
+  margin-bottom: 2px;
+  transition: color 0.2s ease;
 }
 
-.nav-btn.inactive {
+/* Textos de las etiquetas */
+.nav-label-text {
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
+}
+
+/* --- CONFIGURACIÓN DE ESTADOS --- */
+
+/* Estado Inactivo (Gris) */
+.nav-scroll-btn.inactive .nav-icon-wrapper,
+.nav-scroll-btn.inactive .nav-label-text {
   color: #9CA3AF;
   font-weight: 500;
 }
 
-.nav-btn-icon {
-  margin-bottom: 2px;
+/* Estado Activo (Azul oscuro enfocado) */
+.nav-scroll-btn.active .nav-icon-wrapper,
+.nav-scroll-btn.active .nav-label-text {
+  color: #1E3A5F;
+  font-weight: 700;
 }
 
-.nav-btn-label {
-  font-size: 9px;
-  letter-spacing: 0.05em;
-}
-
-.nav-active-dot {
-  width: 6px;
-  height: 6px;
+/* El punto indicador de página activa debajo del texto */
+.nav-active-dot-indicator {
+  width: 5px;
+  height: 5px;
   background-color: #1E3A5F;
   border-radius: 9999px;
-  margin-top: 2px;
+  position: absolute;
+  bottom: 0px;
 }

@@ -1,27 +1,44 @@
+'use client';
+
 import React from 'react';
-import { FiFileText, FiPieChart, FiPlusSquare, FiUser } from 'react-icons/fi';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { FiFileText, FiPieChart, FiPlusSquare, FiPackage, FiTrendingUp, FiUser } from 'react-icons/fi';
 import './BottomMenu.css';
 
 export default function BottomMenu() {
+  const pathname = usePathname();
+
+  // Todos tus módulos unificados en un solo menú deslizable
   const navItems = [
-    { id: 'reportes', label: 'REPORTES', icon: <FiFileText size={20} />, active: true },
-    { id: 'produccion', label: 'PRODUCCION', icon: <FiPieChart size={20} />, active: false },
-    { id: 'registrar', label: 'REGISTRAR', icon: <FiPlusSquare size={20} />, active: false },
-    { id: 'cuenta', label: 'MI CUENTA', icon: <FiUser size={20} />, active: false },
+    { id: 'reportes', label: 'REPORTES', icon: <FiFileText size={18} />, path: '/gerente' },
+    { id: 'produccion', label: 'PRODUCCIÓN', icon: <FiPieChart size={18} />, path: '/gerente/produccion' },
+    { id: 'registrar', label: 'NUEVO', icon: <FiPlusSquare size={18} />, path: '/gerente/inventario/nuevo' },
+    { id: 'inventario', label: 'INVENTARIO', icon: <FiPackage size={18} />, path: '/gerente/inventario' },
+    { id: 'venta', label: 'VENTA', icon: <FiTrendingUp size={18} />, path: '/gerente/venta' },
+    { id: 'cuenta', label: 'GERENTE', icon: <FiUser size={18} />, path: '/gerente/cuenta' },
   ];
 
   return (
-    <nav className="bottom-nav">
-      {navItems.map((item) => (
-        <button 
-          key={item.id} 
-          className={`nav-btn ${item.active ? 'active' : 'inactive'}`}
-        >
-          <div className="nav-btn-icon">{item.icon}</div>
-          <span className="nav-btn-label">{item.label}</span>
-          {item.active && <span className="nav-active-dot" />}
-        </button>
-      ))}
-    </nav>
+    <div className="bottom-nav-container">
+      <nav className="bottom-nav-scrollable">
+        {navItems.map((item) => {
+          const isActive = pathname === item.path;
+
+          return (
+            <Link 
+              key={item.id} 
+              href={item.path}
+              className={`nav-scroll-btn ${isActive ? 'active' : 'inactive'}`}
+              style={{ textDecoration: 'none' }}
+            >
+              <div className="nav-icon-wrapper">{item.icon}</div>
+              <span className="nav-label-text">{item.label}</span>
+              {isActive && <span className="nav-active-dot-indicator" />}
+            </Link>
+          );
+        })}
+      </nav>
+    </div>
   );
 }

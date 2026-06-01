@@ -24,14 +24,20 @@ export default function RegistroPage() {
 
     if (mode === "login") {
       // CASO 1: GERENTE DE INVENTARIO
-      if (form.email === "gerente_inventario@gmail.com" && form.password === "12345678") {
+      if (form.email === "andrescc2817@gmail.com" && form.password === "12345678") {
         toast.show("Acceso de Gerente autorizado 🛠️");
-        setTimeout(() => router.push("/encargado_inventario"), 800);
+        
+        setTimeout(() => router.push("/gerente"), 800);
       } 
       // CASO 2: CONSUMIDOR
       else if (form.email === "consumidor@gmail.com" && form.password === "12345678") {
         toast.show("Bienvenido de vuelta 👋");
         setTimeout(() => router.push("/inicio"), 800);
+      }
+
+      else if (form.email === "inventario@gmail.com" && form.password === "12345678") {
+        toast.show("Bienvenido de vuelta 👋");
+        setTimeout(() => router.push("/encargado_inventario"), 800);
       }
       // CASO 3: CUALQUIER OTRO DATO (ERROR)
       else {
